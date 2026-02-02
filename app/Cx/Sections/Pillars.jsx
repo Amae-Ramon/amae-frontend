@@ -67,7 +67,13 @@ const Pillars = () => {
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-2">
                   {pillar.title}
                 </h3>
-                
+                <Image
+                  src="/brand-mark.png"
+                  alt="Amae"
+                  width={32}
+                  height={32}
+                  className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                />
               </div>
 
               {/* Hover Content - Description (hidden by default, visible on hover) */}

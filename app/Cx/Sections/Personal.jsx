@@ -76,7 +76,13 @@ const Personal = () => {
                 <h3 className="font-serif text-2xl sm:text-3xl text-white mb-2 drop-shadow-lg">
                   {card.title}
                 </h3>
-                
+                <Image
+                  src="/brand-mark.png"
+                  alt="Amae"
+                  width={32}
+                  height={32}
+                  className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                />
               </div>
             </div>
           ))}
