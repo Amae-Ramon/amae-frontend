@@ -6,7 +6,16 @@ import { SiNotion } from 'react-icons/si'
 import { RiTwitterXFill } from 'react-icons/ri'
 
 const Footer = () => {
-  const footerLinks = [
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Shop', href: '/shop' },
+    { name: 'Gift', href: '/gift' },
+    { name: 'Community', href: '/community' },
+    { name: 'Partner', href: '/partner' },
+  ]
+
+  const legalLinks = [
     { name: 'Contact Us', href: '/contact' },
     { name: 'Terms & Conditions', href: '/terms' },
     { name: 'Privacy', href: '/privacy' },
@@ -23,7 +32,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#4d0809] py-10 md:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-stretch">
           {/* Left - Logo & Copyright */}
           <div className="flex flex-col items-center md:items-start">
             <Image
@@ -38,9 +47,22 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Center - Links */}
+          {/* Nav Links - 2 Columns */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-3 items-start">
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="font-sans text-sm text-[#fefccd] hover:text-[#fefccd]/70 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Legal Links */}
           <div className="flex flex-col items-center md:items-start space-y-3">
-            {footerLinks.map((link, index) => (
+            {legalLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.href}

@@ -1,4 +1,4 @@
-import { playfair, inter } from "./Cx/Font/font";
+import { forum, inter } from "./Cx/Font/font";
 import "./globals.css";
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+      <body className={`${forum.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>

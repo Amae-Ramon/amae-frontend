@@ -42,7 +42,7 @@ const Nav = () => {
               <div key={link.name} className="relative">
                 <button
                   onClick={() => link.hasDropdown && toggleDropdown(link.name)}
-                  className="flex items-center text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
+                  className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
                 >
                   {link.name}
                   {link.hasDropdown && (

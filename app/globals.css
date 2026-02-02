@@ -13,7 +13,7 @@
   --color-maroon: var(--maroon);
   --color-beige: var(--beige);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-forum);
 }
 
 /* Base styles */
@@ -25,7 +25,7 @@ body {
 
 /* Serif font for elegant headings */
 .font-serif {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-forum), 'Forum', Georgia, 'Times New Roman', serif;
 }
 
 /* Sans font for body text */

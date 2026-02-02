@@ -1,10 +1,10 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import { Forum, Inter } from "next/font/google";
 
 // Elegant serif font for headings
-export const playfair = Playfair_Display({
+export const forum = Forum({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  weight: "400",
+  variable: "--font-forum",
   display: "swap",
 });
 
