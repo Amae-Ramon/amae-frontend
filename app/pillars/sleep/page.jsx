@@ -246,10 +246,10 @@ const SleepPage = () => {
           {/* Button */}
           <div className="text-center">
             <Link
-              href="/providers/sleep"
+              href="/product-details/sleep"
               className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/80 transition-all duration-300 hover:scale-105"
             >
-              Explore Sleep Support
+              Explore This Pillar
             </Link>
           </div>
         </div>
