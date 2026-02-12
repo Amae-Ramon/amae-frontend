@@ -1,12 +1,99 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Nav from '@/app/Cx/Layout/Nav'
-import HowItWorks from '@/app/Cx/Sections/HowItWorks'
-import Vendors from '@/app/Cx/Sections/Vendors'
-import Footer from '@/app/Cx/Sections/Footer'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Nav from "@/app/Cx/Layout/Nav";
+import HowItWorks from "@/app/Cx/Sections/HowItWorks";
+import Vendors from "@/app/Cx/Sections/Vendors";
+import Footer from "@/app/Cx/Sections/Footer";
 
 const HolisticBeautyPage = () => {
+  const services = [
+    {
+      price: "£125",
+      title: "Byouty: Hydrafacial",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£145",
+      title: "Hydrafacial + LED mask",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£85",
+      title: "Classic facial",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£59 – £65",
+      title: "Hair, blow dry on washed hair (short)",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£43",
+      title: "Classic Manicure",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£48",
+      title: "Classic Pedicure",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£51",
+      title: "Manicure Gel",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£56",
+      title: "Pedicure Gel",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£85",
+      title: "Manicure & Pedicure Classic",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£96",
+      title: "Manicure & Pedicure Gel",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£90",
+      title: "Postpartum Massage",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£90",
+      title: "Lymphatic Drainage",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£89",
+      title: "Swedish & deep tissue massage",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+    {
+      price: "£100",
+      title: "Rebalance: Scar Massage",
+      desc: "Byouty brings luxury beauty treatments to your home, turning your space into a personal spa.",
+      img: "/pillar-4.jpg",
+    },
+  ];
+
   return (
     <main className="relative min-h-screen">
       {/* Navigation */}
@@ -14,7 +101,6 @@ const HolisticBeautyPage = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
         <Image
           src="/pillar-4.jpg"
           alt="Holistic beauty for her"
@@ -29,17 +115,14 @@ const HolisticBeautyPage = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          {/* Subtitle */}
           <span className="text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-sans">
             Our Four Pillars
           </span>
 
-          {/* Main Title */}
           <h1 className="font-serif text-white text-6xl md:text-7xl lg:text-8xl mb-10">
             Holistic Beauty
           </h1>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link
               href="/gift"
@@ -58,7 +141,10 @@ const HolisticBeautyPage = () => {
       </section>
 
       {/* Guidance Section */}
-      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden" style={{ backgroundColor: '#ebdcc8' }}>
+      <section
+        className="relative py-20 md:py-28 lg:py-32 overflow-hidden"
+        style={{ backgroundColor: "#ebdcc8" }}
+      >
         {/* Left Art */}
         <div className="absolute left-0 bottom-0 w-32 sm:w-48 md:w-64 lg:w-80 opacity-60">
           <Image
@@ -83,172 +169,80 @@ const HolisticBeautyPage = () => {
 
         {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto px-6 sm:px-8 text-center">
-          {/* Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon leading-tight mb-6 md:mb-8">
             Care that supports emotional
             <br />
             wellbeing.
           </h2>
 
-          {/* Description */}
           <p className="font-sans text-sm sm:text-base text-maroon/80 leading-relaxed">
-           Recovery, and resilience during postpartum and early
-            
+            Recovery, and resilience during postpartum and early
           </p>
         </div>
       </section>
 
-      {/* What This Pillar Supports Section */}
+      {/* Services Provided (CARDS LIKE SCREENSHOT) */}
       <section className="bg-[#4d0809] py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Heading */}
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center mb-4 md:mb-6">
-            What this pillar supports
-          </h2>
-
-          {/* Description */}
-          <p className="font-sans text-sm sm:text-base text-white/70 text-center max-w-xl mx-auto mb-10 md:mb-14 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sapien eros, cursus a ornare scelerisque, feugiat quis velit. Aliquam mauris tellus, fermentum non viverra ac, maximus vel dui.
-          </p>
-
-          {/* Support Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-14">
-            {/* Card 1 - Healthy sleep foundations */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/pillar-1.jpg"
-                alt="Healthy sleep foundations"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Mental & Emotional<br />Wellbeing
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 - Reduced night-time stress */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/therapy.png"
-                alt="Reduced night-time stress"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Body<br />recovery<br/>therapies
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 - Confidence in routines */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/baby.jpg"
-                alt="Confidence in routines"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Stress<br />Relief
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 - Support without rigid rules */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/pillar-4.jpg"
-                alt="Support without rigid rules"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Confidence<br />building
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Heading + paragraph (flex-col) */}
+          <div className="flex flex-col gap-4 md:gap-6 mb-10 md:mb-14 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white">
+              Services Provided
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed max-w-2xl mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              sapien eros, cursus a ornare scelerisque, feugiat quis velit.
+              Aliquam mauris tellus, fermentum non viverra ac, maximus vel dui.
+            </p>
           </div>
 
-          {/* Button */}
-          <div className="text-center">
+          {/* Cards (tall, text on image, no cropping) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {services.map((s, idx) => (
+              <div
+                key={`${s.title}-${idx}`}
+                className="relative overflow-hidden rounded-2xl bg-[#f3e1c9] shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+              >
+                <div className="relative h-[520px] sm:h-[560px] md:h-[600px]">
+                  <Image src={s.img} alt={s.title} fill className="object-cover" />
+
+                  {/* Soft haze (same look as your other pages) */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-[#f3e1c9]/75" />
+
+                  {/* Text ON image */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                    <div className="font-serif text-4xl md:text-5xl text-maroon mb-2">
+                      {s.price}
+                    </div>
+
+                    <h3 className="font-sans font-semibold text-maroon text-sm leading-snug mb-2">
+                      {s.title}
+                    </h3>
+
+                    <p className="font-sans text-[12px] text-maroon/70 leading-relaxed line-clamp-3">
+                      {s.desc}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full py-3 text-xs font-semibold tracking-wide transition-all duration-300 hover:opacity-90 active:scale-[0.98]"
+                      style={{ backgroundColor: '#711111', color: '#ffffff' }}
+                    >
+                      <span aria-hidden>🛒</span>
+                      ADD TO CART
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-14">
             <Link
-              href="/providers/sleep"
+              href="/product-details/holistic-beauty"
               className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/80 transition-all duration-300 hover:scale-105"
             >
-              Explore Sleep Support
+              Explore This Pillar
             </Link>
           </div>
         </div>
@@ -256,29 +250,25 @@ const HolisticBeautyPage = () => {
 
       {/* How It Works Section */}
       <section className="relative bg-white">
-        {/* Top Section - Heading & Description */}
         <div className="pt-16 md:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Heading */}
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon mb-4 md:mb-6">
               How It Works
             </h2>
 
-            {/* Description */}
             <p className="font-sans text-sm sm:text-base text-maroon/80 max-w-2xl mx-auto leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius pharetra turpis eget facilisis. Sed interdum suscipit nunc ac faucibus.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              varius pharetra turpis eget facilisis. Sed interdum suscipit nunc
+              ac faucibus.
             </p>
           </div>
         </div>
 
-        {/* Card + Image Section */}
         <div className="relative mt-10 md:mt-14">
-          {/* Beige Card */}
           <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-32 sm:pb-40 md:pb-48">
             <div className="max-w-5xl mx-auto">
               <div className="bg-[#ebdcc8] rounded-3xl shadow-lg p-6 sm:p-8 md:p-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                  {/* Step 1 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
                       <span className="font-serif text-lg sm:text-xl text-maroon">1</span>
@@ -291,7 +281,6 @@ const HolisticBeautyPage = () => {
                     </p>
                   </div>
 
-                  {/* Step 2 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
                       <span className="font-serif text-lg sm:text-xl text-maroon">2</span>
@@ -304,7 +293,6 @@ const HolisticBeautyPage = () => {
                     </p>
                   </div>
 
-                  {/* Step 3 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
                       <span className="font-serif text-lg sm:text-xl text-maroon">3</span>
@@ -318,10 +306,9 @@ const HolisticBeautyPage = () => {
                   </div>
                 </div>
 
-                {/* Button */}
                 <div className="mt-8 md:mt-10 text-center">
                   <Link
-                    href="/providers/sleep"
+                    href="/providers/holistic-beauty"
                     className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/80 transition-all duration-300 hover:scale-105 shadow-md"
                   >
                     Explore Providers
@@ -331,7 +318,6 @@ const HolisticBeautyPage = () => {
             </div>
           </div>
 
-          {/* Image - Positioned behind the card's bottom portion */}
           <div className="absolute bottom-0 left-0 right-0 h-64 sm:h-72 md:h-80 lg:h-96">
             <Image
               src="/how-it-works.png"
@@ -346,14 +332,11 @@ const HolisticBeautyPage = () => {
       {/* Trust / Reassurance Section */}
       <section className="bg-white py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon text-center mb-12 md:mb-16">
             Trust / Reassurance
           </h2>
 
-          {/* Trust Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-            {/* Card 1 - Vetted providers */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-blue-100 flex items-center justify-center mb-6">
                 <Image
@@ -372,7 +355,6 @@ const HolisticBeautyPage = () => {
               </p>
             </div>
 
-            {/* Card 2 - 12 Month Validity */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-pink-100 flex items-center justify-center mb-6">
                 <Image
@@ -387,11 +369,10 @@ const HolisticBeautyPage = () => {
                 12 Month Validity
               </h3>
               <p className="font-sans text-sm text-maroon/70 leading-relaxed max-w-xs">
-                Offer support that truly matters. Amae gifts are flexible, thoughtful and designed to ease, not add to, new moms' lives.
+                Offer support that truly matters. Amae gifts are flexible, thoughtful and designed to ease, not add to, new moms&apos; lives.
               </p>
             </div>
 
-            {/* Card 3 - Flexible booking */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
                 <Image
@@ -416,16 +397,12 @@ const HolisticBeautyPage = () => {
       {/* Featured Providers Section */}
       <section className="bg-[#fefcf3] py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Heading */}
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-maroon text-center mb-10 md:mb-14">
             Featured Providers
           </h2>
 
-          {/* Provider Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-            {/* Card 1 - Milk It */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/milk-it.png"
@@ -435,7 +412,6 @@ const HolisticBeautyPage = () => {
                   className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -449,9 +425,7 @@ const HolisticBeautyPage = () => {
               </div>
             </div>
 
-            {/* Card 2 - The Baby Experience */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/baby-e.png"
@@ -461,7 +435,6 @@ const HolisticBeautyPage = () => {
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -475,9 +448,7 @@ const HolisticBeautyPage = () => {
               </div>
             </div>
 
-            {/* Card 3 - The Mindful Sleep Coach */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/sleep.png"
@@ -487,7 +458,6 @@ const HolisticBeautyPage = () => {
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -505,31 +475,26 @@ const HolisticBeautyPage = () => {
       </section>
 
       {/* Support CTA Section */}
-      <section 
+      <section
         className="relative py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8"
         style={{
-          backgroundImage: 'url(/pillar-3.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: "url(/pillar-3.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          {/* Subtitle */}
           <p className="font-sans text-xs sm:text-sm tracking-[0.3em] text-beige uppercase mb-4 sm:mb-6 font-light">
             Gift Now
           </p>
 
-          {/* Main Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 sm:mb-10">
             Support That New Mom Today!
           </h2>
 
-          {/* Button */}
           <Link
             href="/gift"
             className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/90 transition-all duration-300 hover:scale-105"
@@ -538,9 +503,10 @@ const HolisticBeautyPage = () => {
           </Link>
         </div>
       </section>
-      <Footer/>
-    </main>
-  )
-}
 
-export default HolisticBeautyPage
+      <Footer />
+    </main>
+  );
+};
+
+export default HolisticBeautyPage;

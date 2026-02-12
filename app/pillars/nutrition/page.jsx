@@ -1,12 +1,63 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Nav from '@/app/Cx/Layout/Nav'
-import HowItWorks from '@/app/Cx/Sections/HowItWorks'
-import Vendors from '@/app/Cx/Sections/Vendors'
-import Footer from '@/app/Cx/Sections/Footer'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Nav from "@/app/Cx/Layout/Nav";
+import HowItWorks from "@/app/Cx/Sections/HowItWorks";
+import Vendors from "@/app/Cx/Sections/Vendors";
+import Footer from "@/app/Cx/Sections/Footer";
 
 const NutritionPage = () => {
+  const products = [
+    {
+      price: "£44",
+      title: "Milk It & Lactation support cookie box",
+      desc: "Milk It was founded by Mel — a postpartum nutrition consultant, breastfeeding counsellor, doula, perinatal…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£125",
+      title: "The Food Doula 3 day package (1P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£205",
+      title: "The Food Doula 3 day package (2P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£205",
+      title: "The Food Doula 5 day package (1P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£390",
+      title: "The Food Doula 5 day package (2P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£285",
+      title: "The Food Doula 7 day package (1P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£540",
+      title: "The Food Doula 7 day package (2P)",
+      desc: "The Food Doula provides comforting, home-cooked meal deliveries across the UK, created to offer practical…",
+      img: "/pillar-2.png",
+    },
+    {
+      price: "£275",
+      title: "Remote consultation by video",
+      desc: "The baby experience is founded by Lou Toseby (NCT Breastfeeding Counsellor, Holistic Sleep Coach…).",
+      img: "/pillar-2.png",
+    },
+  ];
+
   return (
     <main className="relative min-h-screen">
       {/* Navigation */}
@@ -14,7 +65,6 @@ const NutritionPage = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
         <Image
           src="/pillar-2.png"
           alt="Nutrition for her baby"
@@ -23,23 +73,18 @@ const NutritionPage = () => {
           className="object-cover object-center"
         />
 
-        {/* Maroon Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-maroon/40 via-maroon/30 to-maroon/50 mix-blend-multiply" />
         <div className="absolute inset-0 bg-[#8B4513]/20" />
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          {/* Subtitle */}
           <span className="text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-sans">
             Our Four Pillars
           </span>
 
-          {/* Main Title */}
           <h1 className="font-serif text-white text-6xl md:text-7xl lg:text-8xl mb-10">
             Nutrition
           </h1>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link
               href="/gift"
@@ -58,8 +103,10 @@ const NutritionPage = () => {
       </section>
 
       {/* Guidance Section */}
-      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden" style={{ backgroundColor: '#ebdcc8' }}>
-        {/* Left Art */}
+      <section
+        className="relative py-20 md:py-28 lg:py-32 overflow-hidden"
+        style={{ backgroundColor: "#ebdcc8" }}
+      >
         <div className="absolute left-0 bottom-0 w-32 sm:w-48 md:w-64 lg:w-80 opacity-60">
           <Image
             src="/white-art-1.png"
@@ -70,7 +117,6 @@ const NutritionPage = () => {
           />
         </div>
 
-        {/* Right Art */}
         <div className="absolute right-0 bottom-0 w-32 sm:w-48 md:w-64 lg:w-80 opacity-60">
           <Image
             src="/white-art-2.png"
@@ -81,247 +127,154 @@ const NutritionPage = () => {
           />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 max-w-2xl mx-auto px-6 sm:px-8 text-center">
-          {/* Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon leading-tight mb-6 md:mb-8">
             Evidence-informed feeding
             <br />
             support for parents and babies.
           </h2>
 
-          {/* Description */}
           <p className="font-sans text-sm sm:text-base text-maroon/80 leading-relaxed">
             Delivered with compassion and without judgement.
-            
           </p>
         </div>
       </section>
 
-      {/* What This Pillar Supports Section */}
+      {/* Services Provided (SAME CARD SYSTEM AS SLEEP) */}
       <section className="bg-[#4d0809] py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Heading */}
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white text-center mb-4 md:mb-6">
-            What this pillar supports
-          </h2>
-
-          {/* Description */}
-          <p className="font-sans text-sm sm:text-base text-white/70 text-center max-w-xl mx-auto mb-10 md:mb-14 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sapien eros, cursus a ornare scelerisque, feugiat quis velit. Aliquam mauris tellus, fermentum non viverra ac, maximus vel dui.
-          </p>
-
-          {/* Support Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-14">
-            {/* Card 1 - Healthy sleep foundations */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/nutrition-feature-1.png"
-                alt="Healthy sleep foundations"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Infant feeding<br />guidance
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 - Reduced night-time stress */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/nutrition-feature-2.png"
-                alt="Reduced night-time stress"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Maternal<br />recovery<br />nutrition
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 - Confidence in routines */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/steps.png"
-                alt="Confidence in routines"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Family meal<br />support
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 - Support without rigid rules */}
-            <div className="group relative aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg cursor-pointer">
-              <Image
-                src="/pillar-2.png"
-                alt="Support without rigid rules"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-maroon/60 group-hover:bg-maroon/80 transition-colors duration-300" />
-              {/* Default Content */}
-              <div className="absolute inset-0 flex items-center p-5 md:p-8 gap-4 md:gap-6 transition-opacity duration-300 group-hover:opacity-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl border-2 border-white/50 flex items-center justify-center shrink-0 bg-white/5">
-                  <Image
-                    src="/brand-mark.png"
-                    alt="Amae"
-                    width={64}
-                    height={64}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
-                  />
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-                  Pratical<br />everyday<br />advice
-                </h3>
-              </div>
-              {/* Hover Content */}
-              <div className="absolute inset-0 flex flex-col justify-center p-5 md:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="font-serif text-white text-sm sm:text-base md:text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col gap-4 md:gap-6 mb-10 md:mb-14 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white">
+              Services Provided
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed max-w-2xl mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              sapien eros, cursus a ornare scelerisque, feugiat quis velit.
+              Aliquam mauris tellus, fermentum non viverra ac, maximus vel dui.
+            </p>
           </div>
 
-          {/* Button */}
-          <div className="text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {products.map((p, idx) => (
+              <div
+                key={`${p.title}-${idx}`}
+                className="relative overflow-hidden rounded-2xl bg-[#f3e1c9] shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+              >
+                <div className="relative h-[480px] sm:h-[520px] md:h-[560px]">
+                  <Image src={p.img} alt={p.title} fill className="object-cover" />
+
+                  {/* Same overlay as Sleep (not the beige haze) */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-[#f3e1c9]/70" />
+
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                    <div className="font-serif text-4xl text-maroon mb-2">
+                      {p.price}
+                    </div>
+
+                    <h3 className="font-sans font-semibold text-maroon text-sm leading-snug mb-2">
+                      {p.title}
+                    </h3>
+
+                    <p className="font-sans text-[12px] text-maroon/70 leading-relaxed line-clamp-3">
+                      {p.desc}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full py-2.5 text-xs font-semibold tracking-wide transition-all duration-300 hover:opacity-90"
+                      style={{ backgroundColor: '#711111', color: '#ffffff' }}
+                    >
+                      <span aria-hidden>🛒</span>
+                      ADD TO CART
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-14">
             <Link
-              href="/providers/sleep"
+              href="/product-details/nutrition"
               className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/80 transition-all duration-300 hover:scale-105"
             >
-              Explore Sleep Support
+              Explore This Pillar
             </Link>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works Section (same as your original Nutrition code) */}
       <section className="relative bg-white">
-        {/* Top Section - Heading & Description */}
         <div className="pt-16 md:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Heading */}
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon mb-4 md:mb-6">
               How It Works
             </h2>
 
-            {/* Description */}
             <p className="font-sans text-sm sm:text-base text-maroon/80 max-w-2xl mx-auto leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius pharetra turpis eget facilisis. Sed interdum suscipit nunc ac faucibus.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              varius pharetra turpis eget facilisis. Sed interdum suscipit nunc
+              ac faucibus.
             </p>
           </div>
         </div>
 
-        {/* Card + Image Section */}
         <div className="relative mt-10 md:mt-14">
-          {/* Beige Card */}
           <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-32 sm:pb-40 md:pb-48">
             <div className="max-w-5xl mx-auto">
               <div className="bg-[#ebdcc8] rounded-3xl shadow-lg p-6 sm:p-8 md:p-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                  {/* Step 1 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
-                      <span className="font-serif text-lg sm:text-xl text-maroon">1</span>
+                      <span className="font-serif text-lg sm:text-xl text-maroon">
+                        1
+                      </span>
                     </div>
                     <h3 className="font-serif text-xl sm:text-2xl text-maroon mb-3">
                       Choose Service or Value
                     </h3>
                     <p className="font-sans text-sm text-maroon/70 leading-relaxed">
-                      Select a thoughtful gift or voucher from our curated range of postpartum support, from sleep and nutrition to home and holistic care.
+                      Select a thoughtful gift or voucher from our curated range
+                      of postpartum support, from sleep and nutrition to home and
+                      holistic care.
                     </p>
                   </div>
 
-                  {/* Step 2 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
-                      <span className="font-serif text-lg sm:text-xl text-maroon">2</span>
+                      <span className="font-serif text-lg sm:text-xl text-maroon">
+                        2
+                      </span>
                     </div>
                     <h3 className="font-serif text-xl sm:text-2xl text-maroon mb-3">
                       Add Message & Delivery
                     </h3>
                     <p className="font-sans text-sm text-maroon/70 leading-relaxed">
-                      The recipient redeems their voucher through Amae and is connected with a trusted provider that suits their needs.
+                      The recipient redeems their voucher through Amae and is
+                      connected with a trusted provider that suits their needs.
                     </p>
                   </div>
 
-                  {/* Step 3 */}
                   <div className="flex flex-col items-center text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-maroon flex items-center justify-center mb-4">
-                      <span className="font-serif text-lg sm:text-xl text-maroon">3</span>
+                      <span className="font-serif text-lg sm:text-xl text-maroon">
+                        3
+                      </span>
                     </div>
                     <h3 className="font-serif text-xl sm:text-2xl text-maroon mb-3">
                       Recipients Book Directly
                     </h3>
                     <p className="font-sans text-sm text-maroon/70 leading-relaxed">
-                      They book directly with their provider and receive the care they need, while Amae handles everything behind the scenes.
+                      They book directly with their provider and receive the care
+                      they need, while Amae handles everything behind the scenes.
                     </p>
                   </div>
                 </div>
 
-                {/* Button */}
                 <div className="mt-8 md:mt-10 text-center">
                   <Link
-                    href="/providers/sleep"
+                    href="/providers/nutrition"
                     className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/80 transition-all duration-300 hover:scale-105 shadow-md"
                   >
                     Explore Providers
@@ -331,7 +284,6 @@ const NutritionPage = () => {
             </div>
           </div>
 
-          {/* Image - Positioned behind the card's bottom portion */}
           <div className="absolute bottom-0 left-0 right-0 h-64 sm:h-72 md:h-80 lg:h-96">
             <Image
               src="/how-it-works.png"
@@ -346,14 +298,11 @@ const NutritionPage = () => {
       {/* Trust / Reassurance Section */}
       <section className="bg-white py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-maroon text-center mb-12 md:mb-16">
             Trust / Reassurance
           </h2>
 
-          {/* Trust Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-            {/* Card 1 - Vetted providers */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-blue-100 flex items-center justify-center mb-6">
                 <Image
@@ -368,11 +317,11 @@ const NutritionPage = () => {
                 Vetted providers
               </h3>
               <p className="font-sans text-sm text-maroon/70 leading-relaxed max-w-xs">
-                We partner with only trusted specialists, ensuring safe and reliable care for new mothers.
+                We partner with only trusted specialists, ensuring safe and
+                reliable care for new mothers.
               </p>
             </div>
 
-            {/* Card 2 - 12 Month Validity */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-pink-100 flex items-center justify-center mb-6">
                 <Image
@@ -387,11 +336,11 @@ const NutritionPage = () => {
                 12 Month Validity
               </h3>
               <p className="font-sans text-sm text-maroon/70 leading-relaxed max-w-xs">
-                Offer support that truly matters. Amae gifts are flexible, thoughtful and designed to ease, not add to, new moms' lives.
+                Offer support that truly matters. Amae gifts are flexible,
+                thoughtful and designed to ease, not add to, new moms&apos; lives.
               </p>
             </div>
 
-            {/* Card 3 - Flexible booking */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
                 <Image
@@ -406,7 +355,8 @@ const NutritionPage = () => {
                 Flexible booking
               </h3>
               <p className="font-sans text-sm text-maroon/70 leading-relaxed max-w-xs">
-                Bring the warm, nurturing support of a village right to her door, with Amae making gifting personal and intuitive.
+                Bring the warm, nurturing support of a village right to her door,
+                with Amae making gifting personal and intuitive.
               </p>
             </div>
           </div>
@@ -416,16 +366,12 @@ const NutritionPage = () => {
       {/* Featured Providers Section */}
       <section className="bg-[#fefcf3] py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Heading */}
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-maroon text-center mb-10 md:mb-14">
             Featured Providers
           </h2>
 
-          {/* Provider Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-            {/* Card 1 - Milk It */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/milk-it.png"
@@ -435,10 +381,10 @@ const NutritionPage = () => {
                   className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <Link
                   href="/providers/milk-it"
@@ -449,9 +395,7 @@ const NutritionPage = () => {
               </div>
             </div>
 
-            {/* Card 2 - The Baby Experience */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/baby-e.png"
@@ -461,10 +405,10 @@ const NutritionPage = () => {
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <Link
                   href="/providers/baby-experience"
@@ -475,9 +419,7 @@ const NutritionPage = () => {
               </div>
             </div>
 
-            {/* Card 3 - The Mindful Sleep Coach */}
             <div className="group relative bg-[#f8e8e8] hover:bg-[#d8e8ed] rounded-2xl p-8 md:p-10 aspect-[4/3] cursor-pointer transition-colors duration-300 overflow-hidden">
-              {/* Default Content - Logo */}
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <Image
                   src="/sleep.png"
@@ -487,10 +429,10 @@ const NutritionPage = () => {
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                 />
               </div>
-              {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-serif text-maroon text-sm leading-relaxed text-center mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <Link
                   href="/providers/mindful-sleep-coach"
@@ -505,31 +447,26 @@ const NutritionPage = () => {
       </section>
 
       {/* Support CTA Section */}
-      <section 
+      <section
         className="relative py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8"
         style={{
-          backgroundImage: 'url(/pillar-2.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: "url(/pillar-2.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          {/* Subtitle */}
           <p className="font-sans text-xs sm:text-sm tracking-[0.3em] text-beige uppercase mb-4 sm:mb-6 font-light">
             Gift Now
           </p>
 
-          {/* Main Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 sm:mb-10">
             Support That New Mom Today!
           </h2>
 
-          {/* Button */}
           <Link
             href="/gift"
             className="inline-block font-sans px-8 py-3 bg-beige text-maroon rounded-full text-sm font-medium hover:bg-beige/90 transition-all duration-300 hover:scale-105"
@@ -538,9 +475,10 @@ const NutritionPage = () => {
           </Link>
         </div>
       </section>
-      <Footer/>
-    </main>
-  )
-}
 
-export default NutritionPage
+      <Footer />
+    </main>
+  );
+};
+
+export default NutritionPage;

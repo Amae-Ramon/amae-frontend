@@ -9,7 +9,7 @@ const Nav = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about', hasDropdown: true },
+    { name: 'About', href: '/about' },
     { name: 'Shop', href: '/shop', hasDropdown: true },
     { name: 'Gift', href: '/gift', hasDropdown: true },
     { name: 'Community', href: '/community' },
@@ -40,12 +40,12 @@ const Nav = () => {
           <div className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
-                <button
-                  onClick={() => link.hasDropdown && toggleDropdown(link.name)}
-                  className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
-                >
-                  {link.name}
-                  {link.hasDropdown && (
+                {link.hasDropdown ? (
+                  <button
+                    onClick={() => toggleDropdown(link.name)}
+                    className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
+                  >
+                    {link.name}
                     <svg
                       className={`ml-1 w-3 h-3 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
                       fill="none"
@@ -54,8 +54,15 @@ const Nav = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -132,12 +139,12 @@ const Nav = () => {
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <div key={link.name}>
-                  <button
-                    onClick={() => link.hasDropdown && toggleDropdown(link.name)}
-                    className="flex items-center justify-between w-full text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors py-2"
-                  >
-                    {link.name}
-                    {link.hasDropdown && (
+                  {link.hasDropdown ? (
+                    <button
+                      onClick={() => toggleDropdown(link.name)}
+                      className="flex items-center justify-between w-full text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors py-2"
+                    >
+                      {link.name}
                       <svg
                         className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
                         fill="none"
@@ -146,8 +153,16 @@ const Nav = () => {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="flex items-center justify-between w-full text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors py-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </div>
               ))}
               {/* User Icon in Mobile */}
