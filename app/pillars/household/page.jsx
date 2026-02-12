@@ -148,11 +148,11 @@ const HouseholdPage = () => {
                       {s.price}
                     </div>
 
-                    <h3 className="font-sans font-semibold text-maroon text-sm leading-snug mb-2">
+                    <h3 className="font-sans font-semibold text-black text-sm leading-snug mb-2">
                       {s.title}
                     </h3>
 
-                    <p className="font-sans text-[12px] text-maroon/70 leading-relaxed line-clamp-3">
+                    <p className="font-sans text-[12px] text-gray-500 leading-relaxed line-clamp-3">
                       {s.desc}
                     </p>
 

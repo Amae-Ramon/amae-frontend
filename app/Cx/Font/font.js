@@ -1,5 +1,4 @@
 import { Forum, Inter } from "next/font/google";
-
 // Elegant serif font for headings
 export const forum = Forum({
   subsets: ["latin"],
