@@ -10,7 +10,17 @@ const Nav = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Shop', href: '/shop', hasDropdown: true },
+    { 
+      name: 'Shop', 
+      href: '/shop', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Sleep', href: '/pillars/sleep' },
+        { name: 'Nutrition', href: '/pillars/nutrition' },
+        { name: 'Household', href: '/pillars/household' },
+        { name: 'Holistic Beauty', href: '/pillars/holistic-beauty' },
+      ]
+    },
     { name: 'Gift', href: '/gift', hasDropdown: true },
     { name: 'Community', href: '/community' },
     { name: 'Partner', href: '/partner' },
@@ -39,22 +49,44 @@ const Nav = () => {
           {/* Nav Links - Centered */}
           <div className="flex items-center space-x-8">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative">
+              <div 
+                key={link.name} 
+                className="relative"
+                onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.name)}
+                onMouseLeave={() => link.hasDropdown && setActiveDropdown(null)}
+              >
                 {link.hasDropdown ? (
-                  <button
-                    onClick={() => toggleDropdown(link.name)}
-                    className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
-                  >
-                    {link.name}
-                    <svg
-                      className={`ml-1 w-3 h-3 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <>
+                    <button
+                      className="flex items-center text-base font-medium font-serif text-maroon hover:text-maroon/70 transition-colors"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                      {link.name}
+                      <svg
+                        className={`ml-1 w-3 h-3 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {/* Dropdown Menu */}
+                    {activeDropdown === link.name && link.dropdownItems && (
+                      <div className="absolute top-full left-0 pt-2 z-50">
+                        <div className="bg-white rounded-xl shadow-lg py-2 min-w-[180px]">
+                          {link.dropdownItems.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="block px-4 py-2 text-sm font-serif text-maroon hover:bg-beige/50 transition-colors"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Link
                     href={link.href}
@@ -140,20 +172,40 @@ const Nav = () => {
               {navLinks.map((link) => (
                 <div key={link.name}>
                   {link.hasDropdown ? (
-                    <button
-                      onClick={() => toggleDropdown(link.name)}
-                      className="flex items-center justify-between w-full text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors py-2"
-                    >
-                      {link.name}
-                      <svg
-                        className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <>
+                      <button
+                        onClick={() => toggleDropdown(link.name)}
+                        className="flex items-center justify-between w-full text-sm font-medium font-serif text-maroon hover:text-maroon/70 transition-colors py-2"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
+                        {link.name}
+                        <svg
+                          className={`w-4 h-4 transition-transform ${activeDropdown === link.name ? 'rotate-180' : ''}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {/* Mobile Dropdown Items */}
+                      {activeDropdown === link.name && link.dropdownItems && (
+                        <div className="pl-4 py-1 space-y-1">
+                          {link.dropdownItems.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="block text-sm font-serif text-maroon/80 hover:text-maroon py-1.5 transition-colors"
+                              onClick={() => {
+                                setActiveDropdown(null)
+                                setMobileMenuOpen(false)
+                              }}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <Link
                       href={link.href}
